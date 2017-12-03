@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>create CMS Signed Data</title>
+
+    <style type="text/css">
+        #create{
+            display:inline-block;
+            padding:5px 15px;
+            background:#ACD0EC;
+            border:solid 1px #4C6181;
+            color:#000;
+            font:normal 14px/16px Helvetica, Arial, sans-serif;
+        }
+        #create:hover{
+            background:#DAEBF8;
+            cursor:pointer;
+        }
+    </style>
+
+    <script type="text/javascript" src="background.js"></script>
+</head>
+    <div class="input data">
+        <div class="input privatekey">
+            input your privatekey<br>
+            <textarea id="privatekey" rows="15" cols="35"></textarea>
+        </div>
+        <div class="input certificate">
+            input your certificate<br>
+            <textarea id="certificate" rows="15" cols="35"></textarea>
+        </div>
+        <div class="input to be signed data">
+            input content to be signed<br>
+            <textarea id="before_signed_data" rows="15" cols="35"></textarea>
+        </div>
+        <div id="create">create</div>
+    </div>
+    <div class="result">
+        <div class="result_signed_data">
+            signed data<br>
+            <textarea id="after_signed_data" rows="15" cols="35"></textarea>
+        </div>
+    </div>
+<body>
+</body>
+</html>
