@@ -20,8 +20,10 @@
         }
     </style>
 
-    <script type="text/javascript" src="background.js"></script>
+    <script type="text/javascript" src="background1.js"></script>
 </head>
+   
+<body>
     <div class="input data">
         <div class="input privatekey">
             input your privatekey<br>
@@ -33,16 +35,15 @@
         </div>
         <div class="input to be signed data">
             input content to be signed<br>
-            <textarea id="before_signed_data" rows="15" cols="35"></textarea>
+            <textarea id="content" rows="15" cols="35"></textarea>
         </div>
         <div id="create">create</div>
     </div>
     <div class="result">
         <div class="result_signed_data">
             signed data<br>
-            <textarea id="after_signed_data" rows="15" cols="35"></textarea>
+            <textarea id="new_signed_data" rows="15" cols="35"></textarea>
         </div>
     </div>
-<body>
 </body>
 </html>
