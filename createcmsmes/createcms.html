@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>forge sample</title>
+ <meta charset="utf-8" />
+
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/node-forge@0.7.0/dist/forge.min.js"></script>
+ <script type="text/javascript" src="https://unpkg.com/node-forge@0.7.0/dist/forge.min.js"></script>
+
+ <!--<script type="text/javascript" src="js/mimefuncs.js"></script>
+    <script type="text/javascript" src="js/addressparser.js"></script>
+    <script type="text/javascript" src="js/mimeparser-tzabbr.js"></script>
+    <script type="text/javascript" src="js/mimeparser.js"></script>
+    <script type="text/javascript" src="js/emailjs-mime-codec.js"></script>
+    <script type="text/javascript" src="js/emailjs-mime-types.js"></script>
+    <script type="text/javascript" src="js/emailjs-addressparser.js"></script>
+    <script type="text/javascript" src="js/punycode.js"></script>
+    <script type="text/javascript" src="js/emailjs-mime-builder.js"></script>-->
+
+ <script type="text/javascript" src="js/createcms.js"></script>
+</head>
+<body>
+ <div class="head">
+  just sample <br>
+  <textarea id="cer" rows=18 cols="80">-----BEGIN CERTIFICATE-----
+MIIC0zCCAb2gAwIBAgIBATALBgkqhkiG9w0BAQUwHjEcMAkGA1UEBhMCUlUwDwYD
+VQQDHggAVABlAHMAdDAeFw0xNjAxMzExNTAwMDBaFw0xOTAxMzExNTAwMDBaMB4x
+HDAJBgNVBAYTAlJVMA8GA1UEAx4IAFQAZQBzAHQwggEiMA0GCSqGSIb3DQEBAQUA
+A4IBDwAwggEKAoIBAQDMiBarFZXrdfyTV2TqmS+XEoTSsZQAxkylEr7wUAn9h9I+
+PruH+LlZ6k41dwIoQjCB/L9vDl3v9b3DSszMtOiKu4cAhYKW22yuHOrQP8mzWbX/
+OI4uXwZ+7CTFCkJYRl+5KjjyaNiJNSNV/QjCkfnuOrE2OKVfvqJysZElLLPcCZcv
+fd7N3/zWBUSrxoZz2pJVMYvzuMhRlLBILE/tWySvz2pwtUl9CExTZA2yMzKj2sml
+TapHK1Bt/ldLIrZP0bRgMmMD9YozQqDSJWoSybyzCVqF/EVEfo1qH8kJKUcxbwsC
+kgYHWCG+ZL6B20lwK6wuj9Qx6bqNZLi/YRt15OUXAgMBAAGjIDAeMA8GA1UdEwQI
+MAYBAf8CAQMwCwYDVR0PBAQDAgAGMAsGCSqGSIb3DQEBBQOCAQEADM7aOdoa4yT8
+adwcYbdKjpz6M4TWsAgaO8lQXJV3KEMpv1c0GluUt23dH21VVKyxjvluDHfopaS8
+aaOngFCGHv/ekdjabJUvnM9skZRhnM7fFe1WKB+JgI1VNX+3tMoq5ks1i9T9hSCh
+eZFisfZ65UJzMK+SJlUdzAcJcntI3OWqXyTsGXCiq4/rH09U1ZUJwIMRt4ON86wZ
+itlbssvg/fWreoy57K9fPAYJyFBzD4jpsgc6cxGNDYEryT92FsyPEdaln8WHbTPA
+s64OkqCuZM59NunGBvMY4pS9h49NJgVepE8mhFYcHSuYi73dmF2a4my41m1DzMsc
+pHEyp4GU0A==
+-----END CERTIFICATE-----
+
+</textarea><br>
+  <textarea id="pri" rows="18" cols="80">
+-----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDMiBarFZXrdfyT
+V2TqmS+XEoTSsZQAxkylEr7wUAn9h9I+PruH+LlZ6k41dwIoQjCB/L9vDl3v9b3D
+SszMtOiKu4cAhYKW22yuHOrQP8mzWbX/OI4uXwZ+7CTFCkJYRl+5KjjyaNiJNSNV
+/QjCkfnuOrE2OKVfvqJysZElLLPcCZcvfd7N3/zWBUSrxoZz2pJVMYvzuMhRlLBI
+LE/tWySvz2pwtUl9CExTZA2yMzKj2smlTapHK1Bt/ldLIrZP0bRgMmMD9YozQqDS
+JWoSybyzCVqF/EVEfo1qH8kJKUcxbwsCkgYHWCG+ZL6B20lwK6wuj9Qx6bqNZLi/
+YRt15OUXAgMBAAECggEAYabP+9sQex0X/FkLi56bxCtJUzcJjN0glue+VgpA2tVQ
+IfvdmWu9QxrFQG2TkBkaA9XiqGlZnEnd0jISWeI97I7gQ/V6hgA5gV+5FLh/2quI
+Y1RjPeyMs2iXnaPqTS88YLGyArrgN5IxTsrCtfLwOze2iEa/XlksQkpZHECdlv36
+MdfarBvRwnXbR7KDickACxo6248x7rNnzAaWOYtJp7ibALIIINmCTc431D7QxfxB
+ggwkiA3Mo0t7/RjgbGtcuPAoxe1yKu+i7YhDtYAUPgvXd8+vIQlx5N4QRnXH9RyF
+/9EYf9XbxqBV16TDwTgFuLn8WnqiotGJtBaEsjWaMQKBgQD1YJcD4Dp6UK0mlTEZ
+H7lOS7zTXdoPaV5CVsNcxhbQqRfs0j/RT3/T7Z980CuYlCtPq9d1bRn14fmKj+X9
+7fiO5X6zuLj7kMF6HdUYXNKJpRt5cnix6U1VwpuiTSfkJqFNnxp/bYTFdSHKje9b
+dwaZkqSJz+IsdWFnrjxwO10xYwKBgQDVYtLKNKAcciMadZKq/6Bw2sDoYjYfHJA+
+AQA1NcCQJvdZi049juVvjPxd8OHPqPuFDL2DDJxNmEYPu7zD28VnOT4RyEwu4APL
+gOQqZG4lA43p8qXERp6D1pOjRPKGm7HQuhV9/H3uoiUNxh3PIQX91pVC2iSCL5to
+MObw5YWFvQKBgQCKDICJzrI3tIHl7hPEZcO0WAnxBKE1AHvmaLfazxtw42ExfIwo
+70gkbFDJQLj2S44ecbhzOSFc43ioSxMDDMpFYroo1KlF5wfi8zu7TCWrCPfvGMbs
+mSxILoevBSeHRXCEohmfTXdgO+j582aRl+Jfrk/htNIzXwqg8TbRkaR5rwKBgHjo
+K+Pi+a3khjthzx8RBMmtSYziySPLvXdEfeeoc1m6moCkTErZAuu4CO75pBlT+GAl
+HeR5ar8Uvu3/RC/+ANZCOwc8ZN5SlBPlDmNu0HIsl2at1HtoQD0XgkQKtxjKc3B/
+X9opDPn/6drqHM3WOlzgD2b3z6PscbQRsWlhw8xJAoGADXZwqjzcITS6Hq2+cfgj
+1hVlXNqZur1PMPQ51apGJRAPGsL8DEqf2sCzflAPVtDMdNTd5k/r8TMSCJIAovUo
+OaJL40rNi+FAyzE3/UgFLnfpEg7q2mFDVcqFNIiNb4I/WlimbgMIHE2grVIF26FT
+CVYudGK5dJ1HOORoRlsMvKM=
+-----END PRIVATE KEY-----
+</textarea><br>
+  <div id = "create">create</div>
+ </div>
+ <div class="main">
+  main space<br>
+  <textarea id = "message" rows="30" cols="100"></textarea>
+ </div>
+</body>
+</html>

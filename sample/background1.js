@@ -27571,14 +27571,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 	function selectfunction(mes){
 		if (mes == 'create_cmsmessage') {
 			console.log(document.getElementById("content").value);
-			createCMSSigned();
+			var content = document.getElementById("content").value
+			createCMSSigned(content);
 		};
 	}
 	/* end miyamoto*/
 
 
 	//*********************************************************************************
-	function createCMSSigned() {
+	function createCMSSigned(con) {
+		dataBuffer = con;
 		return createCMSSignedInternal().then(function () {
 			var certSimplString = String.fromCharCode.apply(null, new Uint8Array(certificateBuffer));
 
